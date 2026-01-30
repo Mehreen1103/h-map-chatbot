@@ -20,8 +20,8 @@ VECTORSTORE_PATH = "vectorstore/faiss_index"
 # ---------------------------------
 # Streamlit setup (MUST be first UI call)
 # ---------------------------------
-st.set_page_config(page_title="H-map Chatbot", layout="wide")
-st.title("🤖 H-map Chatbot")
+st.set_page_config(page_title="HabiMate", layout="wide")
+st.title("🤖HabiMate")
 
 # ---------------------------------
 # Load Vectorstore
@@ -84,7 +84,7 @@ rag_chain = (
 # ---------------------------------
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-        ("Bot", "Welcome to the Habitat for Humanity Bangladesh Family Database Chatbot. Ask me anything")
+        ("Bot", "Hello! I'm HabiMate, your friendly assistant for informed decision-making, preparedness, and action. How can I help you today?")
     ]
 
 # ---------------------------------
