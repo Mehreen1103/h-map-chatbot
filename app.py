@@ -21,7 +21,8 @@ VECTORSTORE_PATH = "vectorstore/faiss_index"
 # Streamlit setup (MUST be first UI call)
 # ---------------------------------
 st.set_page_config(page_title="HabiMate", layout="wide")
-st.title("🤖HabiMate")
+st.markdown('<h1 style="text-align: center;">HabiMate</h1>', unsafe_allow_html=True)
+st.write("HabiMate is an AI-powered assistant designed to support informed decision-making, preparedness, and action across climate-vulnerable contexts. Integrated within the H-MAP platform, HabiMate helps users quickly understand community, housing, hazard, and vulnerability data through simple, interactive conversations.By translating complex datasets into clear insights, HabiMate enables organizations, governments, and practitioners to assess risks, identify priorities, and plan targeted interventions more effectively. It supports evidence-based planning, enhances preparedness efforts, and helps turn data into practical actions on the ground making decision-making faster, smarter, and more inclusive.")
 
 # ---------------------------------
 # Load Vectorstore
@@ -84,7 +85,7 @@ rag_chain = (
 # ---------------------------------
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-        ("Bot", "Hello! I'm HabiMate, your friendly assistant for informed decision-making, preparedness, and action. How can I help you today?")
+        ("HabiMate", "Hi there! I’m HabiMate, your AI-powered guide for informed and data-driven decisions that support safer homes and resilient communities. How can I help today?")
     ]
 
 # ---------------------------------
