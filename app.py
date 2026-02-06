@@ -97,21 +97,22 @@ if "chat_history" not in st.session_state:
 chat_html = """
 <style>
 #chat-box {
-    height: 100px; 
+    height: 250px;                /* slightly smaller than before */
     overflow-y: auto; 
-    padding: 8px;             /* reduced padding */
+    padding: 8px;
     background: #f9f9f9; 
     border-radius: 8px;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    margin-bottom: 10px;          /* spacing before input box */
 }
 
 .message {
     max-width: 70%; 
-    padding: 8px 12px;        /* reduced padding */
-    margin-bottom: 6px;       /* tighter spacing between messages */
+    padding: 6px 10px;            /* reduced padding for tighter look */
+    margin-bottom: 5px;           /* tighter spacing between messages */
     border-radius: 12px;
-    line-height: 1.4;         /* tighter lines in text */
+    line-height: 1.3;             /* tighter line spacing */
     word-wrap: break-word;
 }
 
@@ -128,13 +129,16 @@ chat_html = """
 <div id="chat-box">
 """
 
-
+# Add chat messages
 for speaker, msg in st.session_state.chat_history:
     cls = "user" if speaker == "You" else "bot"
     chat_html += f"<div class='message {cls}'><b>{speaker}:</b> {msg}</div>"
 
 chat_html += "</div>"
-components.html(chat_html, height=450)
+
+# Display the chat box
+components.html(chat_html, height=300)   # make the iframe height smaller
+
 
 # ---------------------------------
 # Input
