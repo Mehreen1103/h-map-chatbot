@@ -91,15 +91,43 @@ if "chat_history" not in st.session_state:
 # ---------------------------------
 # Chat UI
 # ---------------------------------
+# ---------------------------------
+# Chat UI
+# ---------------------------------
 chat_html = """
 <style>
-#chat-box {height: 420px; overflow-y: auto; padding: 12px; background: #f9f9f9; border-radius: 8px;}
-.message {max-width: 70%; padding: 10px 14px; margin-bottom: 10px; border-radius: 15px;}
-.user {background: #e8f0fe; margin-left: auto;}
-.bot {background: #d7f2d8;}
+#chat-box {
+    height: 100px; 
+    overflow-y: auto; 
+    padding: 8px;             /* reduced padding */
+    background: #f9f9f9; 
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.message {
+    max-width: 70%; 
+    padding: 8px 12px;        /* reduced padding */
+    margin-bottom: 6px;       /* tighter spacing between messages */
+    border-radius: 12px;
+    line-height: 1.4;         /* tighter lines in text */
+    word-wrap: break-word;
+}
+
+.user {
+    background: #e8f0fe; 
+    margin-left: auto;
+}
+
+.bot {
+    background: #d7f2d8;
+    margin-right: auto;
+}
 </style>
 <div id="chat-box">
 """
+
 
 for speaker, msg in st.session_state.chat_history:
     cls = "user" if speaker == "You" else "bot"
