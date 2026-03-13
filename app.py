@@ -22,7 +22,6 @@ VECTORSTORE_PATH = "vectorstore/faiss_index"
 # ---------------------------------
 st.set_page_config(page_title="HabiMate", layout="wide")
 st.markdown('<h1 style="text-align: center;">HabiMate</h1>', unsafe_allow_html=True)
-st.write("HabiMate is an AI-powered assistant designed to support informed decision-making, preparedness, and action across climate-vulnerable contexts. Integrated within the H-MAP platform, HabiMate helps users quickly understand community, housing, hazard, and vulnerability data through simple, interactive conversations.By translating complex datasets into clear insights, HabiMate enables organizations, governments, and practitioners to assess risks, identify priorities, and plan targeted interventions more effectively. It supports evidence-based planning, enhances preparedness efforts, and helps turn data into practical actions on the ground making decision-making faster, smarter, and more inclusive.")
 
 # ---------------------------------
 # Load Vectorstore
@@ -96,15 +95,19 @@ if "chat_history" not in st.session_state:
 # ---------------------------------
 chat_html = """
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 #chat-box {
     height: 250px;                /* slightly smaller than before */
     overflow-y: auto; 
     padding: 8px;
-    background: #f9f9f9; 
+    background: white; 
     border-radius: 8px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     margin-bottom: 10px;          /* spacing before input box */
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5), 0 0 40px rgba(76, 175, 80, 0.2);
 }
 
 .message {
